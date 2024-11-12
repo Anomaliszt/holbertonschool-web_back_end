@@ -1,0 +1,1 @@
+Learning about Es6 basics
