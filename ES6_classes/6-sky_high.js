@@ -1,5 +1,11 @@
+// Extend Buildinf
 import Building from './5-building';
 
+/**
+ * Define Class
+ *
+ * @class SkyHighBuilding
+ */
 class SkyHighBuilding extends Building {
   constructor(sqft, floors) {
     super(sqft);
@@ -7,11 +13,11 @@ class SkyHighBuilding extends Building {
   }
 
   get floors() {
-    return this._floors;
+    return (this._floors);
   }
 
   evacuationWarningMessage() {
-    return `Evacuate slowly the ${this._floors} floors`;
+    return (`Evacuate slowly the ${this.floors} floors`);
   }
 }
 

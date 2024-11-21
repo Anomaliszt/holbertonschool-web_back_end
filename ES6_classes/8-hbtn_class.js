@@ -1,33 +1,44 @@
-class HolbertonCourse {
-    constructor(size, location) {
-      this._size = size;
-      this._location = location;
-    }
-  
-    get size() {
-      return this._size;
-    }
-  
-    set size(newSize) {
-      this._size = newSize;
-    }
-  
-    get location() {
-      return this._location;
-    }
-  
-    set location(newLocation) {
-      this._location = newLocation;
-    }
-  
-    [Symbol.toPrimitive](hint) {
-      if (hint === 'number') {
-        return this._size;
-      } if (hint === 'string') {
-        return this._location;
-      }
-      return this;
-    }
+// HolbertonClass Class
+
+/**
+ * Build initial class
+ *
+ * @class HolbertonClass
+ */
+export default class HolbertonClass {
+  constructor(size = '', location = '') {
+    this.size = size;
+    this.location = location;
   }
-  
-  export default HolbertonCourse;
+
+  [Symbol.toPrimitive](dataType) {
+    if (dataType === 'string') {
+      return (`${this.location}`);
+    } if (dataType === 'number') {
+      return (`${this.size}`);
+    }
+    return (`${this.location}`);
+  }
+
+  get size() {
+    return this._size;
+  }
+
+  set size(value) {
+    if (typeof value !== 'number') {
+      throw new TypeError('size must be a number');
+    }
+    this._size = value;
+  }
+
+  get location() {
+    return this._code;
+  }
+
+  set location(value) {
+    if (typeof value !== 'string') {
+      throw new TypeError('size must be a string');
+    }
+    this._code = value;
+  }
+}
