@@ -1,13 +1,17 @@
-// try-catch
-
 function guardrail(mathFunction) {
   const queue = [];
+  let result;
+
   try {
-    const result = mathFunction();
-    queue.push(result);
-  } catch (error) {
-    queue.push(`Error: ${error.message}`);
+    result = mathFunction();
+  } catch (e) {
+    result = e.toString();
   }
+
+  queue.push(result);
   queue.push('Guardrail was processed');
+
   return queue;
 }
+
+export default guardrail;
