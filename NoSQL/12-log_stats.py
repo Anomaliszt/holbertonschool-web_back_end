@@ -2,7 +2,6 @@
 """ Log stats """
 from pymongo import MongoClient
 
-
 def log_stats():
     """ Log stats """
     client = MongoClient()
