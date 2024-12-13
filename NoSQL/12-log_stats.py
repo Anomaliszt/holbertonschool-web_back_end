@@ -4,9 +4,9 @@ from pymongo import MongoClient
 
 def log_stats():
     """ Log stats """
-    client = MongoClient()
-    db = client.logs
-    collection = db.nginx
+    client = MongoClient('mongodb://127.0.0.1:27017')
+    db = client.nginx
+    collection = db.logs
 
     total_logs = collection.count_documents({})
     print(f"{total_logs} logs")
