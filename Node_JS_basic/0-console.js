@@ -1,7 +1,2 @@
-// function that displays name
-
-const displayMessage = (message) => {
-  console.log(message);
-}
-
+const displayMessage = (aString) => console.log(aString);
 module.exports = displayMessage;
